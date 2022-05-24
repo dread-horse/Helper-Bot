@@ -1,0 +1,48 @@
+INFO:aiogram:Bot: HELPER [@it_trojan_bot]
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:root:Update: {"update_id": 53791023, "message": {"message_id": 114, "from": {"id": 634026275, "is_bot": false, "first_name": "dread", "last_name": "horse", "username": "dread_horse", "language_code": "ru"}, "chat": {"id": 634026275, "first_name": "dread", "last_name": "horse", "username": "dread_horse", "type": "private"}, "date": 1653334646, "text": "/language", "entities": [{"type": "bot_command", "offset": 0, "length": 9}]}} 
+could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+Traceback (most recent call last):
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/home/dread_horse/helper-develop/helper/handlers/users/language.py", line 15, in lan
+    await bot.send_message(message.chat.id, "Programming Languages", reply_markup=inline_language_menu())
+  File "/home/dread_horse/helper-develop/helper/keyboards/inline/language.py", line 9, in inline_language_menu
+    conn, cursor = connect()
+  File "/home/dread_horse/helper-develop/helper/utils/db_api/mydb.py", line 5, in connect
+    conn = psycopg2.connect("dbname={0} user={1} password={2}".format(dbName, dbUser, dbPassword))
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=OperationalError('could not connect to server: No such file or directory\n\tIs the server running locally and accepting\n\tconnections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?\n')>
+Traceback (most recent call last):
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/home/dread_horse/helper-develop/helper/handlers/users/language.py", line 15, in lan
+    await bot.send_message(message.chat.id, "Programming Languages", reply_markup=inline_language_menu())
+  File "/home/dread_horse/helper-develop/helper/keyboards/inline/language.py", line 9, in inline_language_menu
+    conn, cursor = connect()
+  File "/home/dread_horse/helper-develop/helper/utils/db_api/mydb.py", line 5, in connect
+    conn = psycopg2.connect("dbname={0} user={1} password={2}".format(dbName, dbUser, dbPassword))
+  File "/home/dread_horse/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
